@@ -1,0 +1,29 @@
+.body-banner {
+  display: flex;
+  justify-content: space-between; /* Adjusts the space between the two divs */
+  align-items: center; /* Vertically aligns the content */
+  margin: 0 200px;
+  margin-bottom: 20px;
+}
+
+.product-title {
+  color: #6cbdf9;
+}
+
+.product-title h1,
+.icons-add-light-dark h1 {
+  margin: 0; /* Remove default margin */
+}
+
+.icons-add-light-dark {
+  display: flex; /* Keeps the icons in one line */
+  gap: 10px; /* Adjust space between icons */
+}
+
+.plus-square-button {
+  cursor: pointer;
+}
+
+.light-dark-mode-button {
+  cursor: pointer;
+}

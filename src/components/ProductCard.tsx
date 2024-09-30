@@ -32,9 +32,10 @@ export default function ProductCard({
           sx={{
             height: 140,
             objectFit: "contain",
+            marginTop: 1,
           }}
           image={imageUrl}
-          title="green iguana"
+          title={name}
         />
         <CardContent style={{ textAlign: "left" }}>
           <Typography gutterBottom variant="h5" component="div">

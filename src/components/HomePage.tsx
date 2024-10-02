@@ -11,11 +11,19 @@ const HomePage = () => {
     setshowCreateForm(!showCreateForm);
   };
 
+  const handleProductCreated = () => {
+    setshowCreateForm(false);
+  };
+
   return (
     <div>
       <Banner onPlusClick={handlePlusClick} />
       <div className="homepage-display">
-        {showCreateForm ? <CreateProduct /> : <ProductList />}
+        {showCreateForm ? (
+          <CreateProduct onProductCreated={handleProductCreated} />
+        ) : (
+          <ProductList />
+        )}
       </div>
     </div>
   );

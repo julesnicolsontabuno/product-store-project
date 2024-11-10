@@ -1,22 +1,10 @@
 {
   "products": [
     {
-      "productName": "Samsung S24",
-      "productPrice": "10000",
-      "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/2401/gallery/ph-galaxy-s24-plus-sm-s926bzvcphl-thumb-539305886",
-      "id": "159b"
-    },
-    {
-      "productName": "Nintendo Switch",
-      "productPrice": "15995",
-      "imageUrl": "https://cdn.consolevariations.com/28418/YEJL2qASSL6rbBjugEM7KN5TYF3LfE-metaaW1hZ2VtXzIwMjMtMDctMjJfMjMxOTIxMjUzLnBuZw==-.png-transparent.png",
-      "id": "a26f"
-    },
-    {
-      "id": "f5d9",
+      "id": "b769",
       "productName": "iPhone 16",
       "productPrice": "54990",
-      "imageUrl": "https://business.ee.co.uk/content/dam/eeb-site/images-2023/devices/apple/phones/iphone-16/iphone-16/ultramarine/1-iphone-16-ultramarine.png"
+      "imageUrl": "https://pngimg.com/d/iphone16_PNG3.png"
     }
   ]
 }

@@ -8,6 +8,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import "../assets/css/productcard.css";
 import { createTheme, ThemeProvider } from "@mui/material";
+import axios from "axios";
 
 const darkTheme = createTheme({
   palette: {
@@ -19,11 +20,25 @@ export default function ProductCard({
   name,
   price,
   imageUrl,
+  id,
+  onProductDeleted,
 }: {
   name: any;
   price: any;
   imageUrl: any;
+  id: any;
+  onProductDeleted: any;
 }) {
+  function deleteProduct(id: string) {
+    axios
+      .delete("http://localhost:3000/products/" + id)
+      .then(() => {
+        console.log("delete");
+        onProductDeleted();
+      })
+      .catch((err) => console.log(err));
+  }
+
   return (
     <ThemeProvider theme={darkTheme}>
       <Card sx={{ maxWidth: 345 }} className="card">
@@ -53,7 +68,10 @@ export default function ProductCard({
             <FaEdit style={{ fontSize: "24px" }} />
           </Button>
           <Button>
-            <MdDelete style={{ fontSize: "24px" }} />
+            <MdDelete
+              style={{ fontSize: "24px" }}
+              onClick={() => deleteProduct(id)}
+            />
           </Button>
         </CardActions>
       </Card>

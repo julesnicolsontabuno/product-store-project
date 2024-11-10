@@ -1,15 +1,16 @@
-import { useState } from "react";
 import "../assets/css/banner.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaPlusSquare } from "react-icons/fa";
 import { MdLightMode } from "react-icons/md";
 import { FaRectangleList } from "react-icons/fa6";
 
-const Banner = ({ onPlusClick }: { onPlusClick: any }) => {
-  const [changeIcon, setchangeIcon] = useState(false);
+interface BannerProps {
+  onPlusClick: () => void;
+  changeIcon: boolean;
+}
 
+const Banner = ({ onPlusClick, changeIcon }: BannerProps) => {
   const handleClick = () => {
-    setchangeIcon(!changeIcon);
     onPlusClick();
   };
 

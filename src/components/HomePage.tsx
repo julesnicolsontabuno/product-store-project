@@ -9,14 +9,24 @@ import React from "react";
 
 const HomePage = () => {
   const [showCreateForm, setshowCreateForm] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
+  const [changeIcon, setChangeIcon] = useState(false); // State to control the icon
 
   const handlePlusClick = () => {
     setshowCreateForm(!showCreateForm);
+    setChangeIcon(!changeIcon); // Toggle icon state on click
   };
 
   const handleProductCreated = () => {
     setshowCreateForm(false);
+    setSnackbarMessage("Product successfully added");
+    setOpen(true);
+    setChangeIcon(false); // Reset icon after product is created
+  };
+
+  const handleProductDeleted = () => {
+    setSnackbarMessage("Product successfully deleted");
     setOpen(true);
   };
 
@@ -46,12 +56,12 @@ const HomePage = () => {
 
   return (
     <div>
-      <Banner onPlusClick={handlePlusClick} />
+      <Banner onPlusClick={handlePlusClick} changeIcon={changeIcon} />
       <div className="homepage-display">
         {showCreateForm ? (
           <CreateProduct onProductCreated={handleProductCreated} />
         ) : (
-          <ProductList />
+          <ProductList onProductDeleted={handleProductDeleted} />
         )}
       </div>
       <div>
@@ -59,7 +69,7 @@ const HomePage = () => {
           open={open}
           autoHideDuration={6000}
           onClose={handleClose}
-          message="Product successfully added"
+          message={snackbarMessage}
           action={action}
           sx={{
             "& .MuiSnackbarContent-root": {

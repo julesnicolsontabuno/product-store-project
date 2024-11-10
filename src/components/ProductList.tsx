@@ -4,7 +4,11 @@ import ProductCard from "./ProductCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function ProductList() {
+interface ProductListProps {
+  onProductDeleted: () => void;
+}
+
+export default function ProductList({ onProductDeleted }: ProductListProps) {
   const [data, setData] = useState<any[]>([]);
   useEffect(() => {
     axios
@@ -28,10 +32,12 @@ export default function ProductList() {
                 name={product.productName}
                 price={product.productPrice}
                 imageUrl={product.imageUrl}
+                id={product.id}
+                onProductDeleted={onProductDeleted}
               />
             ))
           ) : (
-            <p>No products available</p>
+            <h1>No Products Available</h1>
           )}
         </div>
       </div>

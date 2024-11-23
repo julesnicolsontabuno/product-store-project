@@ -1,10 +1,11 @@
 {
   "products": [
     {
-      "id": "b769",
+      "id": "22ef",
       "productName": "iPhone 16",
-      "productPrice": "54990",
-      "imageUrl": "https://pngimg.com/d/iphone16_PNG3.png"
+      "productPrice": 54990,
+      "imageUrl": "https://pngimg.com/uploads/iphone16/iphone16_PNG3.png",
+      "price": 54990
     }
   ]
 }

@@ -30,6 +30,11 @@ const HomePage = () => {
     setOpen(true);
   };
 
+  const handleProductEdited = () => {
+    setSnackbarMessage("Product successfully updated"); // New message for edit
+    setOpen(true);
+  };
+
   const handleClose = (
     _event: React.SyntheticEvent | Event,
     reason?: SnackbarCloseReason
@@ -61,7 +66,10 @@ const HomePage = () => {
         {showCreateForm ? (
           <CreateProduct onProductCreated={handleProductCreated} />
         ) : (
-          <ProductList onProductDeleted={handleProductDeleted} />
+          <ProductList
+            onProductDeleted={handleProductDeleted}
+            onProductEdited={handleProductEdited}
+          />
         )}
       </div>
       <div>

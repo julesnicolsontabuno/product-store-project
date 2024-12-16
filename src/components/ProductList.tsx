@@ -6,9 +6,13 @@ import axios from "axios";
 
 interface ProductListProps {
   onProductDeleted: () => void;
+  onProductEdited: () => void;
 }
 
-export default function ProductList({ onProductDeleted }: ProductListProps) {
+export default function ProductList({
+  onProductDeleted,
+  onProductEdited,
+}: ProductListProps) {
   const [data, setData] = useState<any[]>([]);
   useEffect(() => {
     axios
@@ -34,6 +38,7 @@ export default function ProductList({ onProductDeleted }: ProductListProps) {
                 imageUrl={product.imageUrl}
                 id={product.id}
                 onProductDeleted={onProductDeleted}
+                onProductUpdated={onProductEdited}
               />
             ))
           ) : (

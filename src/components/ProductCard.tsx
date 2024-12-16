@@ -24,12 +24,14 @@ export default function ProductCard({
   imageUrl,
   id,
   onProductDeleted,
+  onProductUpdated,
 }: {
   name: any;
   price: number;
   imageUrl: any;
   id: any;
   onProductDeleted: any;
+  onProductUpdated: () => void;
 }) {
   const [values, setValues] = useState({
     id: id,
@@ -60,6 +62,7 @@ export default function ProductCard({
       .then((res) => {
         console.log("Updated product:", res.data);
         toggleModal(); // Close modal on success
+        onProductUpdated();
       })
       .catch((err) => console.log(err));
   };
